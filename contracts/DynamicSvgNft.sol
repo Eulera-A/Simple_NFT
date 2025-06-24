@@ -49,7 +49,7 @@ contract DynamicSvgNft is ERC721 {
         //youtube 22:32:38
     }
 
-    function mintNft(uint256 highValue) public {
+    function mintNft(int256 highValue) public {
         // this function allows minter to mint a new nft,
         // input: value, the value set for his nft
         s_tokenIdToHighValue[s_tokenCounter] = highValue;
@@ -105,4 +105,8 @@ contract DynamicSvgNft is ERC721 {
                 ) // end abi.encode for concat(base,imageuri)
             ); //end string ()
     }
-} //23:08:05
+
+    function _exists(uint256 tokenId) internal view returns (bool) {
+        return _ownerOf(tokenId) != address(0);
+    }
+}

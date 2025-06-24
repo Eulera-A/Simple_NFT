@@ -1,7 +1,7 @@
 const { network } = require("hardhat");
 const { developmentChains } = require("../helper-hardhat.config");
 const { verify } = require("../utils/verify");
-const { networkConfig } = require("../../helper-hardhat-config");
+const { networkConfig } = require("../helper-hardhat-config");
 const {
   storeImages,
   storeTokenUriMetadata,
